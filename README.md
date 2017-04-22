@@ -23,9 +23,6 @@ Save your gmail u&k safely as env vars. Check `packadge.json` for var names:
 $ magic stuff
 ```
 
-Do this shady thing:
-https://myaccount.google.com/lesssecureapps
-
 Start trolling:
 ```
 $ npm run troll
