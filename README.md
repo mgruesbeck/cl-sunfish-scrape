@@ -32,3 +32,8 @@ Start trolling:
 ```shell
 $ npm run troll
 ```
+
+# App overview
+- `app.js`: entry file with 1/4 day scheduler.
+- `checkCl.js`: checks Craigslist and if new posting calls sendEmail.
+- `sendEmail.js`: sends an Email.
