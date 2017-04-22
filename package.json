@@ -3,13 +3,14 @@
   "author": "Melvin Gruesbeck",
   "version": "1.0.0",
   "description": "scraping craigslist for a sunfish",
-  "main": "sunfish.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "troll": "GU=$GU GK=$GK node sunfish.js"
+    "troll": "GU=$GU GK=$GK node app.js"
   },
   "dependencies": {
     "cheerio": "^0.22.0",
+    "node-schedule": "^1.2.1",
     "nodemailer": "^4.0.1",
     "request": "^2.81.0"
   }

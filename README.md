@@ -1,5 +1,10 @@
 # cl-sunfish-scrape
-Trolling craigslist for a sunfish.
+Trolling craigslist for a Sunfish.
+
+# What it do
+- Checks SF Bay Area Craigslist Sunfish postings
+- Sends email alert if there are new ones
+- Checks four times a day
 
 # Instructions
 
@@ -18,7 +23,7 @@ Install npm dependencies:
 $ npm install
 ```
 
-Save your gmail u&k safely as env vars. Check `packadge.json` for var names:
+Save your gmail u&k safely as env vars. Check `package.json` for var names:
 ```shell
 $ magic stuff
 ```
@@ -27,6 +32,3 @@ Start trolling:
 ```shell
 $ npm run troll
 ```
-
-# To do
-- add launchd job
