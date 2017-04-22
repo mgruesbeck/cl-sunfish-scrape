@@ -40,11 +40,11 @@ const checkCl = function () {
       if (err) throw err;
       if (currentDateTime === data) {
         console.log('Suh, nothing new to see.');
-        sendEmail();
       }
       if (currentDateTime > data) {
         console.log('Yo yo yo! There is a new boat to row!');
         updateDateTime();
+        sendEmail();
       }
     });
   }
