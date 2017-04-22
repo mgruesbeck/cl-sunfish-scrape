@@ -1,9 +1,28 @@
-# scrape-cl
-scraping craigslist
+# cl-sunfish-scrape
+Trolling craigslist for a sunfish.
 
-# instructions
+# Instructions
 
-```python
-$ pip install python-craigslist
-$ python sunfish.py 
+Install node:
 ```
+$ brew install node
+```
+
+Cd to root dir:
+```
+$ cd scrape-cl
+```
+
+Install npm dependencies:
+```
+$ npm install
+```
+
+Start trolling:
+```
+$ npm run troll
+```
+
+# To do
+- add cron job
+- send email when new posting is listed
