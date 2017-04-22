@@ -6,10 +6,11 @@
   "main": "sunfish.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "troll": "node sunfish.js"
+    "troll": "GU=$GU GK=$GK node sunfish.js"
   },
   "dependencies": {
     "cheerio": "^0.22.0",
+    "nodemailer": "^4.0.1",
     "request": "^2.81.0"
   }
 }

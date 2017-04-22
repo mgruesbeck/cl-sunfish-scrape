@@ -18,6 +18,14 @@ Install npm dependencies:
 $ npm install
 ```
 
+Save your gmail u&k safely as env vars. Check `packadge.json` for var names:
+```
+$ magic stuff
+```
+
+Do this shady thing:
+https://myaccount.google.com/lesssecureapps
+
 Start trolling:
 ```
 $ npm run troll
@@ -25,4 +33,3 @@ $ npm run troll
 
 # To do
 - add cron job
-- send email when new posting is listed
