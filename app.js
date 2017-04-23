@@ -6,7 +6,10 @@
 const checkCl = require('./checkCl.js');
 const schedule = require('node-schedule');
 
+console.log('looking for sails boats...');
+
 // call httpRequest.js and mailer.js with scheduler 
-var scheduler = schedule.scheduleJob('0 */4 * * *', function(){
+var scheduler = schedule.scheduleJob('0 * * * *', function(){
+  console.log('checking craigslist...');
   checkCl();
 });
