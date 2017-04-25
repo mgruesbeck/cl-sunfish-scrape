@@ -6,7 +6,6 @@
 const cheerio = require('cheerio');
 const fs = require('fs');
 const request = require('request');
-const sendEmail = require('./sendEmail.js');
 
 // set global variables
 var currentDateTime = '';
@@ -37,11 +36,12 @@ const checkCl = function () {
   // compare datetime
   function compareDateTime() {
     fs.readFile('./dateTime.txt', 'utf8', function (err, data) {
+      var previousDate = data;
       if (err) throw err;
-      if (currentDateTime === data) {
+      if (currentDateTime === previousDate) {
         console.log('Suh, nothing new to see.');
       }
-      if (currentDateTime > data) {
+      if (currentDateTime > previousDate) {
         console.log('Yo yo yo! There is a new boat to row!');
         console.log('Updating dateTime.txt');
         updateDateTime();

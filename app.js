@@ -3,13 +3,19 @@
 'use strict';
 
 // import modules
-const checkCl = require('./checkCl.js');
+const checkCraigslist = require('./checkCraigslist.js');
 const schedule = require('node-schedule');
+const sendEmail = require('./sendEmail.js');
 
 console.log('looking for sail boats...');
 
 // call httpRequest.js and mailer.js with scheduler 
 var scheduler = schedule.scheduleJob('* * * * *', function(){
   console.log('checking craigslist...');
-  checkCl();
+  checkCraigslist();
+  // parse craigslist
+  // santize
+  // compare datetime
+  // update datime
+  // send email
 });
