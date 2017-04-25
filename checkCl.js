@@ -36,7 +36,7 @@ const checkCl = function () {
 
   // compare datetime
   function compareDateTime(currentDateTime) {
-    fs.readFile('./currentDateTime.txt', 'utf8', function (err, data) {
+    fs.readFile('./dateTime.txt', 'utf8', function (err, data) {
       if (err) throw err;
       if (currentDateTime === data) {
         console.log('Suh, nothing new to see.');
@@ -51,7 +51,7 @@ const checkCl = function () {
 
   // update datetime
   function updateDateTime(currentDateTime) {
-    fs.writeFile('./currentDateTime.txt', currentDateTime, 'utf8', compareDateTime);
+    fs.writeFile('./dateTime.txt', currentDateTime, 'utf8', compareDateTime);
   }
 };
 
