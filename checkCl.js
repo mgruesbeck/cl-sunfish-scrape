@@ -44,7 +44,7 @@ const checkCl = function () {
       if (currentDateTime > data) {
         console.log('Yo yo yo! There is a new boat to row!');
         updateDateTime();
-        sendEmail();
+        //sendEmail();
       }
     });
   }
