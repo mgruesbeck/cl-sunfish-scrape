@@ -9,7 +9,7 @@ const request = require('request');
 const sendEmail = require('./sendEmail.js');
 
 // set global variables
-var currentDateTime;
+var currentDateTime = '';
 
 // create checkCl function
 const checkCl = function () {
@@ -31,11 +31,11 @@ const checkCl = function () {
   // sanitize datetime
   function sanitize(datetime) {
     currentDateTime = datetime.replace(new RegExp(/-| |:/g),'');
-    compareDateTime(currentDateTime);
+    compareDateTime();
   }
 
   // compare datetime
-  function compareDateTime(currentDateTime) {
+  function compareDateTime() {
     fs.readFile('./dateTime.txt', 'utf8', function (err, data) {
       if (err) throw err;
       if (currentDateTime === data) {
@@ -43,14 +43,16 @@ const checkCl = function () {
       }
       if (currentDateTime > data) {
         console.log('Yo yo yo! There is a new boat to row!');
+        console.log('Updating dateTime.txt');
         updateDateTime();
+        //console.log('Sending email.');
         //sendEmail();
       }
     });
   }
 
   // update datetime
-  function updateDateTime(currentDateTime) {
+  function updateDateTime() {
     fs.writeFile('./dateTime.txt', currentDateTime, 'utf8', compareDateTime);
   }
 };
