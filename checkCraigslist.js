@@ -6,10 +6,9 @@
 const cheerio = require('cheerio');
 const fs = require('fs');
 const request = require('request');
-const sendEmail = require('./sendEmail.js');
 
 // set global variables
-var currentDateTime;
+var currentDateTime = '';
 
 // create checkCl function
 const checkCl = function () {
@@ -31,27 +30,30 @@ const checkCl = function () {
   // sanitize datetime
   function sanitize(datetime) {
     currentDateTime = datetime.replace(new RegExp(/-| |:/g),'');
-    compareDateTime(currentDateTime);
+    compareDateTime();
   }
 
   // compare datetime
-  function compareDateTime(currentDateTime) {
-    fs.readFile('./currentDateTime.txt', 'utf8', function (err, data) {
+  function compareDateTime() {
+    fs.readFile('./dateTime.txt', 'utf8', function (err, data) {
+      var previousDate = data;
       if (err) throw err;
-      if (currentDateTime === data) {
+      if (currentDateTime === previousDate) {
         console.log('Suh, nothing new to see.');
       }
-      if (currentDateTime > data) {
+      if (currentDateTime > previousDate) {
         console.log('Yo yo yo! There is a new boat to row!');
+        console.log('Updating dateTime.txt');
         updateDateTime();
-        sendEmail();
+        //console.log('Sending email.');
+        //sendEmail();
       }
     });
   }
 
   // update datetime
-  function updateDateTime(currentDateTime) {
-    fs.writeFile('./currentDateTime.txt', currentDateTime, 'utf8', compareDateTime);
+  function updateDateTime() {
+    fs.writeFile('./dateTime.txt', currentDateTime, 'utf8', compareDateTime);
   }
 };
 
